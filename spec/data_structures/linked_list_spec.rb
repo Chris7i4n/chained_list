@@ -30,4 +30,33 @@ RSpec.describe LinkedList do
     end
   end
 
+  describe "delete_node_by_value" do
+    it "delete node by given value" do
+      linked_list.append('1')
+      linked_list.append('2')
+      linked_list.append('3')
+      linked_list.append('4')
+      linked_list.delete_node_by_value("1")
+      expect(linked_list.to_s).to eq('2 -> 3 -> 4 -> nil')
+    end
+  
+    it "delete node by given value" do
+      linked_list.append('1')
+      linked_list.append('2')
+      linked_list.append('3')
+      linked_list.append('4')
+      linked_list.delete_node_by_value("4")
+      expect(linked_list.to_s).to eq('1 -> 2 -> 3 -> nil')
+    end
+
+    it "delete node by given value" do
+      linked_list.append('1')
+      linked_list.append('2')
+      linked_list.append('3')
+      linked_list.append('4')
+      linked_list.delete_node_by_value("3")
+      expect(linked_list.to_s).to eq('1 -> 2 -> 4 -> nil')
+    end
+
+  end
 end
